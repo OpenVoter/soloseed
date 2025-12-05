@@ -32,9 +32,9 @@ By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices 
 
 In the digital age, identity is fragmented across services, devices, and accounts. Traditional authentication relies on:
 
-Passwords, often reused across platforms
+• Passwords, often reused across platforms
 
-Vendor-managed keys, with no user portability
+• Vendor-managed keys, with no user portability
 
 Hardware tokens whose value is lost if the device is damaged or stolen
 
@@ -42,22 +42,20 @@ Hardware tokens whose value is lost if the device is damaged or stolen
 
 SoloSeed - inspired by Bitcoin wallets - changes this model:
 
-A 12-word seed is the root of your identity
+• A 12-word seed is the root of your identity
 
-Memorized / stored seed phrases allow full recovery of keys
+• Memorized / stored seed phrases allow full recovery of keys
 
-Hardware devices enforce day-to-day security for authentication
-
-Users retain true self-sovereignty, independent of vendors or infrastructure
+Hardware devices that enforce day-to-day security for authentication while users retain true self-sovereignty, independent of vendors or infrastructure.
 
 
 The system separates identity recovery from daily authentication:
 
-Hardware protects active keys
+• Hardware protects active keys
 
-Memorized seed enables regeneration on a new device
+• Memorized seed enables regeneration on a new device
 
-Users can carry the essence of their identity in their minds
+Users can carry the essence of their identity in their minds.
 
 
 
@@ -71,11 +69,11 @@ Phase 1: Provisioning / Hacker Mode
 
 Reprogrammable firmware allows:
 
-New seed generation
+• New seed generation
 
-One-time seed export
+• One-time seed export
 
-Seed import for recovery from existing backups
+• Seed import for recovery from existing backups
 
 
 Public, auditable firmware ensures transparency
@@ -87,13 +85,13 @@ Phase 2: Secure / Solo Mode
 
 Irreversible hardware hardening:
 
-Firmware locked
+• Firmware locked
 
-Debug interfaces disabled
+• Debug interfaces disabled
 
-Private keys non-extractable
+• Private keys non-extractable
 
-One-time seed export/import permanently disabled
+• One-time seed export/import permanently disabled
 
 
 Fully FIDO2/WebAuthn compatible
@@ -103,11 +101,11 @@ Imported or generated keys persist in hardware
 
 Security trade-off:
 
-Identity is now recoverable via memorized seed
+• Identity is now recoverable via memorized seed
 
-Anyone with the seed can clone your identity
+• Anyone with the seed can clone your identity
 
-Hardware guarantees still protect keys during active use
+• Hardware guarantees still protect keys during active use
 
 
 
@@ -124,11 +122,11 @@ SoloSeed	Seed-backed, recoverable, hardened SoloKey — self-sovereign identity
 
 SoloSeed extends the SoloKeys family by:
 
-Maintaining full FIDO2/WebAuthn compatibility
+• Maintaining full FIDO2/WebAuthn compatibility
 
-Introducing deterministic key derivation from user-memorizable seeds
+• Introducing deterministic key derivation from user-memorizable seeds
 
-Preserving the core values of transparency, security, and hardware-backed trust
+• Preserving the core values of transparency, security, and hardware-backed trust
 
 
 
