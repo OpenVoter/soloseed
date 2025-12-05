@@ -78,7 +78,7 @@ device_uid → binds keys to hardware, preventing unnoticed cloning
 
 fido_root_key → used to generate per-site FIDO2 keys
 
-# Hardware Enforcement
+## Hardware Enforcement
 
 Keys are stored in secure hardware flash
 
@@ -86,7 +86,7 @@ No private keys leave the device after secure lock
 
 
 
-# Lifecycle
+## Lifecycle
 
 1. Provisioning / Hacker Mode
 
@@ -128,11 +128,11 @@ Identity can be regenerated on new hardware using seed + passphrase
 
 ---
 
-# Security
+## Security
 
 SoloSeed v0.2 combines hardware-backed security with user-controlled deterministic identity.
 
-# Threat	Mitigation
+### Threat	Mitigation
 
 Malware on host	Keys never leave hardware
 Phishing	FIDO2/WebAuthn standard protections apply
@@ -142,7 +142,7 @@ Unauthorized duplication	Requires both seed and passphrase
 Accidental re-flashing	One-time export/import flags
 
 
-# Residual Risks
+### Residual Risks
 
 Seed + passphrase compromise → attacker can clone identity
 
@@ -165,7 +165,7 @@ Hardware flags prevent repeated exports or stealth duplication
 
 ---
 
-# SoloSeed in the SoloKeys Ecosystem
+## SoloSeed in the SoloKeys Ecosystem
 
 Product	Purpose
 
@@ -188,13 +188,13 @@ Human-portable recovery roots
 
 ---
 
-# Getting Started
+## Getting Started
 
 > Note: SoloSeed v0.2 is currently a conceptual fork of SoloKey firmware. The repository provides high-level design, framework, and documentation for implementation and security auditing.
 
 
 
-# Repository Contents (to be updated)
+## Repository Contents (to be updated)
 
 docs/ — design philosophy, technical and security overviews
 
@@ -203,6 +203,19 @@ firmware/ — SoloSeed firmware fork (work in progress)
 examples/ — host software examples for seed export/import, passphrase handling, and key derivation
 
 
+
+## Contributing
+
+SoloSeed is fully open-source. Contributions are welcome:
+
+Review or audit the firmware design
+
+Test deterministic key derivation or recovery workflows
+
+Improve documentation or lifecycle diagrams
+
+
+Please follow standard GitHub workflows for pull requests and issues.
 
 
 ---
