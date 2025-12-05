@@ -1,111 +1,163 @@
-# SoloSeed
+
+# **SoloSeed**
 
 
-Carry Your Identity on a Hardware Protected Authenticator
+**Carry Your Identity on a Hardware Protected Authenticator**
 
 
-# Overview
+---
 
-SoloSeed is the next evolution of the SoloKey hardware token family, designed to provide:
+## Overview
 
-FIDO2/WebAuthn compatible authentication for websites, devices, and services
+**SoloSeed** is the next evolution of the SoloKey hardware token family, designed to provide:
 
-Deterministic, recoverable identities stored as a human memorizable seed (12–24 words, BIP39-style)
-
-Hardware backed security for daily use, while enabling full personal sovereignty over identity
-
+- **FIDO2/WebAuthn-compatible authentication** for websites, devices, and services
+- 
+- **Deterministic, recoverable identities** stored as a human-memorizable seed (12–24 words, BIP39-style)
+- 
+- **Hardware-backed security** for daily use, while enabling full personal sovereignty over identity  
 
 SoloSeed builds directly on the open-source SoloKeys platform:
 
-[SoloKeys GitHub – Solo1](https://github.com/solokeys/solo1)
+- [SoloKeys GitHub – Solo1](https://github.com/solokeys/solo1) – the official SoloKey firmware and hardware reference  
+- [SoloKeys EU Website](https://solokeys.eu/?lang=en) – European SoloKey official site  
+- [Somu on Crowd Supply](https://www.crowdsupply.com/solokeys/somu) – Hacker/prototyping hardware for experimentation  
 
-[SoloKeys EU Website](https://solokeys.eu/?lang=en)
-
-[Somu on Crowd Supply](https://www.crowdsupply.com/solokeys/somu)
-
-
-By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices where your identity can live in your head, while keys remain hardware protected during regular authentication.
+By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices where your identity can live in your head, while keys remain hardware-protected during regular authentication.
 
 ---
 
-# Philosophy
+## Philosophy
 
 In the digital age, identity is fragmented across services, devices, and accounts. Traditional authentication relies on:
 
-• Passwords, often reused across platforms
+- Passwords, often reused across platforms  
+- Vendor-managed keys, with no user portability  
+- Hardware tokens whose value is lost if the device is damaged or stolen  
 
-• Vendor-managed keys, with no user portability
+SoloSeed changes this model. Inspired by Bitcoin wallets:
 
-Hardware tokens whose value is lost if the device is damaged or stolen
-
-
-
-SoloSeed - inspired by Bitcoin wallets - changes this model:
-
-• A 12-word seed is the root of your identity
-
-• Memorized / stored seed phrases allow full recovery of keys
-
-Hardware devices that enforce day-to-day security for authentication while users retain true self-sovereignty, independent of vendors or infrastructure.
-
+- **A 12-word seed is the root of your identity**  
+- Memorized seed phrases allow full recovery of keys  
+- Hardware devices enforce day-to-day security for authentication  
+- Users retain true self-sovereignty, independent of vendors or infrastructure  
 
 The system separates identity recovery from daily authentication:
 
-• Hardware protects active keys
+- Hardware protects active keys  
+- Memorized seed enables regeneration on a new device  
+- Users can carry the essence of their identity in their minds
 
-• Memorized seed enables regeneration on a new device
+---
 
-Users can carry the essence of their identity in their minds.
+## Technology
+
+SoloSeed v0.2 introduces a deterministic key derivation model based on a 12-word seed plus passphrase, enabling secure recovery and controlled duplication.
+
+### Key Features
+
+- **Seed Generation / Import**  
+  - Device can generate a new 12-word mnemonic or accept a user-provided seed.
+  -  
+- **Passphrase (13th Word)**  
+  - Adds additional entropy to prevent unauthorized duplication.  
+  - Required along with the mnemonic to reproduce identity on new hardware.
+  - 
+- **Deterministic Key Derivation**
+- 
+  ```text
+  master_secret = HKDF(seed || passphrase, salt=device_uid)
+  fido_root_key = HMAC(master_secret, "FIDO2_ROOT")
+  ```
+
+master_secret → root for all FIDO2 per-site keys
+
+device_uid → binds keys to hardware, preventing unnoticed cloning
+
+fido_root_key → used to generate per-site FIDO2 keys
+
+# Hardware Enforcement
+
+Keys are stored in secure hardware flash
+
+No private keys leave the device after secure lock
+
+
+
+# Lifecycle
+
+1. Provisioning / Hacker Mode
+
+Device flashed with open-source firmware
+
+Seed generated/imported
+
+Optional passphrase entered
+
+One-time export of seed (and optional passphrase)
+
+
+
+2. Secure Lock / Solo Mode
+
+Firmware locked, debug interfaces disabled
+
+Keys stored securely and non-extractable
+
+Device fully FIDO2/WebAuthn compatible
+
+
+
+3. Daily Use
+
+Hardware signs authentication requests
+
+Keys never leave the device
+
+
+
+4. Recovery
+
+Identity can be regenerated on new hardware using seed + passphrase
+
+
 
 
 
 ---
 
-# Security Model
+# Security
 
-SoloSeed combines hardware security with seed-based recoverability, using a two-phase lifecycle:
+SoloSeed v0.2 combines hardware-backed security with user-controlled deterministic identity.
 
-Phase 1: Provisioning / Hacker Mode
+# Threat	Mitigation
 
-Reprogrammable firmware allows:
-
-• New seed generation
-
-• One-time seed export
-
-• Seed import for recovery from existing backups
-
-
-Public, auditable firmware ensures transparency
-
-Optional PIN or physical presence confirmation enforces intentional actions
+Malware on host	Keys never leave hardware
+Phishing	FIDO2/WebAuthn standard protections apply
+Factory or supply-chain compromise	Open-source firmware, public flashing ceremonies
+Device loss	Recoverable using seed + passphrase
+Unauthorized duplication	Requires both seed and passphrase
+Accidental re-flashing	One-time export/import flags
 
 
-Phase 2: Secure / Solo Mode
+# Residual Risks
 
-Irreversible hardware hardening:
+Seed + passphrase compromise → attacker can clone identity
 
-• Firmware locked
+Coerced passphrase entry → human-dependent
 
-• Debug interfaces disabled
+Active malware during provisioning → mitigated by public flashing and auditability
 
-• Private keys non-extractable
-
-• One-time seed export/import permanently disabled
+Physical side-channel attacks → depends on MCU hardware
 
 
-Fully FIDO2/WebAuthn compatible
+Identity Duplication and Recovery
 
-Imported or generated keys persist in hardware
+Legitimate duplication is possible only if both seed and passphrase are known
 
+Supports backup devices, geographic redundancy, and travel use
 
-Security trade-off:
-
-• Identity is now recoverable via memorized seed
-
-• Anyone with the seed can clone your identity
-
-• Hardware guarantees still protect keys during active use
+Hardware flags prevent repeated exports or stealth duplication
 
 
 
@@ -116,17 +168,18 @@ Security trade-off:
 Product	Purpose
 
 SoloKey / Solo	Standard FIDO2 authentication hardware token
+SoloSeed	Seed-backed, passphrase-hardened, recoverable SoloKey — self-sovereign identity
 
-SoloSeed	Seed-backed, recoverable, hardened SoloKey — self-sovereign identity
 
+SoloSeed extends the SoloKeys family while maintaining:
 
-SoloSeed extends the SoloKeys family by:
+Full FIDO2/WebAuthn compatibility
 
-• Maintaining full FIDO2/WebAuthn compatibility
+Open-source transparency
 
-• Introducing deterministic key derivation from user-memorizable seeds
+Hardware-backed trust
 
-• Preserving the core values of transparency, security, and hardware-backed trust
+Human-portable recovery roots
 
 
 
@@ -134,87 +187,19 @@ SoloSeed extends the SoloKeys family by:
 
 # Getting Started
 
-> Note: SoloSeed is currently a conceptual fork of the SoloKey firmware. The current repo provides a high-level framework and documentation for implementation and security auditing.
+> Note: SoloSeed v0.2 is currently a conceptual fork of SoloKey firmware. The repository provides high-level design, framework, and documentation for implementation and security auditing.
 
 
 
-# Repository Contents
+# Repository Contents (to be updated)
 
-docs/ — design philosophy, security model, lifecycle diagrams
+docs/ — design philosophy, technical and security overviews
 
 firmware/ — SoloSeed firmware fork (work in progress)
 
-examples/ — host-side examples for seed export/import and deterministic key derivation
+examples/ — host software examples for seed export/import, passphrase handling, and key derivation
 
 
-#Reference Projects
-
-SoloKeys Firmware
-
-Somu Crowdsupply
-
-
-
----
-
-# Lifecycle Overview
-
-1. Provisioning
-
-Device flashed with SoloSeed firmware
-
-Seed generated or imported
-
-One-time seed export occurs
-
-
-
-2. Recovery / Export
-
-User memorizes or engraves seed
-
-Device export/import flags are set
-
-
-
-3. Secure Lock
-
-Device transitions to hardware-enforced Solo mode
-
-Keys remain fully protected, FIDO2 compatible
-
-
-
-4. Daily Use
-
-Authentication with websites, OS, and devices
-
-Keys never leave hardware
-
-
-
-5. Recovery
-
-Seed allows identity restoration on new devices
-
-
-
-
-
----
-
-# Contributing
-
-SoloSeed is fully open-source. Contributions are welcome:
-
-Review or audit the firmware design
-
-Test deterministic key derivation or recovery workflows
-
-Improve documentation or lifecycle diagrams
-
-
-Please follow standard GitHub workflows for pull requests and issues.
 
 
 ---
@@ -222,20 +207,3 @@ Please follow standard GitHub workflows for pull requests and issues.
 License
 
 MIT License — see LICENSE
-
-
----
-
-# Summary
-
-SoloSeed enables a new class of hardware authentication token:
-
-Hardware-backed, FIDO2-compliant keys for everyday use
-
-Deterministic, seed-based recovery for lost or destroyed devices
-
-True self-sovereign identity that can be carried in your head
-
-
-SoloSeed builds on the SoloKeys legacy, extending the range of products while adhering to their core principles: transparency, security, and personal control.
-
