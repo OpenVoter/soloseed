@@ -39,11 +39,12 @@ Vendor-managed keys, with no user portability
 Hardware tokens whose value is lost if the device is damaged or stolen
 
 
-SoloSeed changes this model. Inspired by Bitcoin wallets:
+
+SoloSeed - inspired by Bitcoin wallets - changes this model:
 
 A 12-word seed is the root of your identity
 
-Memorized seed phrases allow full recovery of keys
+Memorized / stored seed phrases allow full recovery of keys
 
 Hardware devices enforce day-to-day security for authentication
 
