@@ -12,15 +12,17 @@
 **SoloSeed** is the next evolution of the SoloKey hardware token family, designed to provide:
 
 - **FIDO2/WebAuthn-compatible authentication** for websites, devices, and services
-- 
+  
 - **Deterministic, recoverable identities** stored as a human-memorizable seed (12–24 words, BIP39-style)
-- 
+
 - **Hardware-backed security** for daily use, while enabling full personal sovereignty over identity  
 
 SoloSeed builds directly on the open-source SoloKeys platform:
 
-- [SoloKeys GitHub – Solo1](https://github.com/solokeys/solo1) – the official SoloKey firmware and hardware reference  
-- [SoloKeys EU Website](https://solokeys.eu/?lang=en) – European SoloKey official site  
+- [SoloKeys GitHub – Solo1](https://github.com/solokeys/solo1) – the official SoloKey firmware and hardware reference
+  
+- [SoloKeys EU Website](https://solokeys.eu/?lang=en) – European SoloKey official site
+  
 - [Somu on Crowd Supply](https://www.crowdsupply.com/solokeys/somu) – Hacker/prototyping hardware for experimentation  
 
 By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices where your identity can live in your head, while keys remain hardware-protected during regular authentication.
@@ -35,7 +37,7 @@ In the digital age, identity is fragmented across services, devices, and account
 - Vendor-managed keys, with no user portability  
 - Hardware tokens whose value is lost if the device is damaged or stolen  
 
-SoloSeed changes this model. Inspired by Bitcoin wallets:
+SoloSeed - inspired by Bitcoin wallets - changes this model:
 
 - **A 12-word seed is the root of your identity**  
 - Memorized seed phrases allow full recovery of keys  
