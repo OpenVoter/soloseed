@@ -17,11 +17,11 @@ Hardware-backed security for daily use, while enabling full personal sovereignty
 
 SoloSeed builds directly on the open-source SoloKeys platform:
 
-SoloKeys GitHub – Solo1 – the official SoloKey firmware and hardware reference
+[SoloKeys GitHub – Solo1](https://github.com/solokeys/solo1)
 
-SoloKeys EU Website – European SoloKey official site
+[SoloKeys EU Website](https://solokeys.eu/?lang=en)
 
-Somu on Crowd Supply – Hacker/prototyping hardware for experimentation
+[Somu on Crowd Supply](https://www.crowdsupply.com/solokeys/somu)
 
 
 By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices where your identity can live in your head, while keys remain hardware-protected during regular authentication.
