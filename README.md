@@ -1,10 +1,10 @@
-# soloseed
+# soloseed #
 
 
-##Carry Your Identity on a Hardware-Protected Authenticator
+## Carry Your Identity on a Hardware-Protected Authenticator
 
 
-#Overview
+# Overview
 
 SoloSeed is the next evolution of the SoloKey hardware token family, designed to provide:
 
@@ -28,7 +28,7 @@ By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices 
 
 ---
 
-#Philosophy
+# Philosophy
 
 In the digital age, identity is fragmented across services, devices, and accounts. Traditional authentication relies on:
 
@@ -62,7 +62,7 @@ Users can carry the essence of their identity in their minds
 
 ---
 
-#Security Model
+# Security Model
 
 SoloSeed combines hardware security with seed-based recoverability, using a two-phase lifecycle:
 
@@ -112,9 +112,9 @@ Hardware guarantees still protect keys during active use
 
 ---
 
-##SoloSeed in the SoloKeys Ecosystem
+# SoloSeed in the SoloKeys Ecosystem
 
-#Product	Purpose
+Product	Purpose
 
 SoloKey / Solo	Standard FIDO2 authentication hardware token
 SoloSeed	Seed-backed, recoverable, hardened SoloKey — self-sovereign identity
@@ -132,13 +132,13 @@ Preserving the core values of transparency, security, and hardware-backed trust
 
 ---
 
-#Getting Started
+# Getting Started
 
 > Note: SoloSeed is currently a conceptual fork of the SoloKey firmware. The current repo provides a high-level framework and documentation for implementation and security auditing.
 
 
 
-#Repository Contents
+# Repository Contents
 
 docs/ — design philosophy, security model, lifecycle diagrams
 
@@ -157,7 +157,7 @@ Somu Crowdsupply
 
 ---
 
-#Lifecycle Overview
+# Lifecycle Overview
 
 1. Provisioning
 
@@ -203,7 +203,7 @@ Seed allows identity restoration on new devices
 
 ---
 
-#Contributing
+# Contributing
 
 SoloSeed is fully open-source. Contributions are welcome:
 
@@ -226,7 +226,7 @@ MIT License — see LICENSE
 
 ---
 
-Summary
+# Summary
 
 SoloSeed enables a new class of hardware authentication token:
 
