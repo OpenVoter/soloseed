@@ -169,8 +169,9 @@ Hardware flags prevent repeated exports or stealth duplication
 
 Product	Purpose
 
-SoloKey / Solo	Standard FIDO2 authentication hardware token
-SoloSeed	Seed-backed, passphrase-hardened, recoverable SoloKey — self-sovereign identity
+SoloKey / Solo - Standard FIDO2 authentication hardware token
+
+SoloSeed	     - Seed-backed, passphrase-hardened, recoverable self-sovereign identity
 
 
 SoloSeed extends the SoloKeys family while maintaining:
