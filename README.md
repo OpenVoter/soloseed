@@ -8,11 +8,11 @@ Carry Your Identity on a Hardware Protected Authenticator
 
 SoloSeed is the next evolution of the SoloKey hardware token family, designed to provide:
 
-FIDO2/WebAuthn-compatible authentication for websites, devices, and services
+FIDO2/WebAuthn compatible authentication for websites, devices, and services
 
-Deterministic, recoverable identities stored as a human-memorizable seed (12–24 words, BIP39-style)
+Deterministic, recoverable identities stored as a human memorizable seed (12–24 words, BIP39-style)
 
-Hardware-backed security for daily use, while enabling full personal sovereignty over identity
+Hardware backed security for daily use, while enabling full personal sovereignty over identity
 
 
 SoloSeed builds directly on the open-source SoloKeys platform:
@@ -24,7 +24,7 @@ SoloSeed builds directly on the open-source SoloKeys platform:
 [Somu on Crowd Supply](https://www.crowdsupply.com/solokeys/somu)
 
 
-By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices where your identity can live in your head, while keys remain hardware-protected during regular authentication.
+By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices where your identity can live in your head, while keys remain hardware protected during regular authentication.
 
 ---
 
@@ -117,6 +117,7 @@ Hardware guarantees still protect keys during active use
 Product	Purpose
 
 SoloKey / Solo	Standard FIDO2 authentication hardware token
+
 SoloSeed	Seed-backed, recoverable, hardened SoloKey — self-sovereign identity
 
 
