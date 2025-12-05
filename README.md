@@ -1,7 +1,7 @@
-# soloseed #
+# SoloSeed
 
 
-## Carry Your Identity on a Hardware-Protected Authenticator
+# Carry Your Identity on a Hardware-Protected Authenticator
 
 
 # Overview
