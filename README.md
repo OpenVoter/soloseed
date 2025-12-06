@@ -88,7 +88,7 @@ No private keys leave the device after secure lock
 
 ## Lifecycle
 
-1. Provisioning / Hacker Mode
+### 1. Provisioning / Hacker Mode
 
 Device flashed with open-source firmware
 
@@ -100,7 +100,7 @@ One-time export of seed (and optional passphrase)
 
 
 
-2. Secure Lock / Solo Mode
+### 2. Secure Lock / Solo Mode
 
 Firmware locked, debug interfaces disabled
 
@@ -110,7 +110,7 @@ Device fully FIDO2/WebAuthn compatible
 
 
 
-3. Daily Use
+### 3. Daily Use
 
 Hardware signs authentication requests
 
@@ -118,7 +118,7 @@ Keys never leave the device
 
 
 
-4. Recovery
+### 4. Recovery
 
 Identity can be regenerated on new hardware using seed + passphrase
 
@@ -153,7 +153,7 @@ Active malware during provisioning → mitigated by public flashing and auditabi
 Physical side-channel attacks → depends on MCU hardware
 
 
-Identity Duplication and Recovery
+### Identity Duplication and Recovery
 
 Legitimate duplication is possible only if both seed and passphrase are known
 
@@ -167,7 +167,7 @@ Hardware flags prevent repeated exports or stealth duplication
 
 ## SoloSeed in the SoloKeys Ecosystem
 
-Product	Purpose
+Product	Purpose:
 
 SoloKey / Solo - Standard FIDO2 authentication hardware token
 
@@ -176,13 +176,13 @@ SoloSeed	     - Seed-backed, passphrase-hardened, recoverable self-sovereign ide
 
 SoloSeed extends the SoloKeys family while maintaining:
 
-Full FIDO2/WebAuthn compatibility
+- Full FIDO2/WebAuthn compatibility
 
-Open-source transparency
+- Open-source transparency
 
-Hardware-backed trust
+- Hardware-backed trust
 
-Human-portable recovery roots
+- Human-portable recovery roots
 
 
 
