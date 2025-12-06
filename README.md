@@ -5,7 +5,7 @@
 **Carry Your Identity on a Hardware Protected Authenticator**
 
 
----
+
 
 ## Overview
 
@@ -27,7 +27,7 @@ SoloSeed builds directly on the open-source SoloKeys platform:
 
 By extending the SoloKey ecosystem, SoloSeed introduces a new paradigm: devices where your identity can live in your head, while keys remain hardware-protected during regular authentication.
 
----
+
 
 ## Philosophy
 
@@ -50,7 +50,7 @@ The system separates identity recovery from daily authentication:
 - Memorized seed enables regeneration on a new device  
 - Users can carry the essence of their identity in their minds
 
----
+
 
 ## Technology
 
@@ -126,7 +126,7 @@ Identity can be regenerated on new hardware using seed + passphrase
 
 
 
----
+
 
 ## Security
 
@@ -163,7 +163,7 @@ Hardware flags prevent repeated exports or stealth duplication
 
 
 
----
+
 
 ## SoloSeed in the SoloKeys Ecosystem
 
@@ -186,7 +186,7 @@ Human-portable recovery roots
 
 
 
----
+
 
 ## Getting Started
 
@@ -218,8 +218,10 @@ Improve documentation or lifecycle diagrams
 Please follow standard GitHub workflows for pull requests and issues.
 
 
----
+
 
 License
 
 MIT License — see LICENSE
+
+**End of README**
