@@ -130,16 +130,6 @@ Enables independent audits, reproducible builds, and community review.
 These features make SoloSeed compatible with Bitcoin’s ethos of self‑sovereignty while serving BBV’s need for unique participant credentials.
 
 
----
-
-## Protocol Stack Overview
-
-BBV is constructed as a layered protocol stack that separates eligibility, identity, voting, and governance execution.
-
-1. POPregister (Layer 1):
-A decentralized electoral roll that binds eligibility to time‑locked Bitcoin stake.
-
-
 
 ---
 
